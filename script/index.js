@@ -14,8 +14,10 @@ let dataProjects = [
         "linkGithub": "https://img.shields.io/badge/GitHub-Ver_no_GitHub-blue?logo=GitHub",
         "linkRepository": "",
     },
-    
+
 ]
+
+const btn = document.querySelector('#btn-scroll');
 
 function fetchData() {
 
@@ -34,8 +36,24 @@ function fetchData() {
 
 };
 
+window.addEventListener('scroll', function () {
+    
+    if (window.scrollY > 10) {
+   
+        btn.classList.remove('btn-normal');
+        btn.classList.add('btn-scroll');
+
+    } if (window.scrollY < 5) {
+
+        btn.classList.remove('btn-scroll');
+        btn.classList.add('btn-normal');
+    }
+});
+
+function removeBtn() {
+
+    window.scrollTo(0, 0);
+
+}
 
 fetchData();
-
-
-
