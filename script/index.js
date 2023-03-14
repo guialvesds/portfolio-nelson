@@ -1,45 +1,34 @@
 
-let dataProjects = [
-    {
-        "title": "Teste de titulo 1",
-        "subscription": "Aqui temos a descrição do que foi feito. e o que será escrito nos dados informado pelo html. Na imagem abaixo temos o exemplo de busca de dados da API do spotfy.",
-        "img": "./assets/projeto1.jpg",
-        "linkGithub": "https://img.shields.io/badge/GitHub-Ver_no_GitHub-blue?logo=GitHub",
-        "linkRepository": "https://github.com/nelsoneltz/spotify-api",
-    },
-    {
-        "title": "Teste de titulo 2",
-        "subscription": "Aqui temos a descrição do que foi feito. e o que será escrito nos dados informado pelo html.",
-        "img": "",
-        "linkGithub": "https://img.shields.io/badge/GitHub-Ver_no_GitHub-blue?logo=GitHub",
-        "linkRepository": "",
-    },
-
-]
-
-const btn = document.querySelector('#btn-scroll');
-
+// Função para buscar informações do Json e passar para o html.
 function fetchData() {
 
-    const apiRes = dataProjects;
+    fetch('./bd/data.json').then(res => {
+        return res.json();
+    }).then(({ dataProjects }) => {
 
-    for (let i of apiRes) {
+        const apiRes = dataProjects;
 
-        document.querySelector('#img1').innerHTML += `
+        for (let i of apiRes) {
+
+            document.querySelector('#img1').innerHTML += `
             <h1>${i.title}</h1>            
             <a href="${i.linkRepository}" target="_blank"><img src="${i.linkGithub}" alt="Acesso ao projeto."></a>                   
             <span>${i.subscription}</span>
-            <img src="${i.img}" alt="Imagem do projeto.">   
+            <img src="${i.img}">   
             <hr>                
-            `
-    }
+            `          
+        }
+    });
 
 };
 
-window.addEventListener('scroll', function () {
-    
+// Evento para ficar ouvindo quando o scroll rola 10px no eixo y e exibe o botão para voltar ao topo
+window.addEventListener('scroll', function (){
+
+    const btn = document.querySelector('#btn-scroll');
+
     if (window.scrollY > 10) {
-   
+
         btn.classList.remove('btn-normal');
         btn.classList.add('btn-scroll');
 
@@ -50,10 +39,10 @@ window.addEventListener('scroll', function () {
     }
 });
 
-function removeBtn() {
-
+// Função untilizada no botão de voltar ao topo, nela setamos a posição do scroll para 0 no eixo X e Y.
+function topPage() {
     window.scrollTo(0, 0);
-
 }
 
+// Executa a função que busca e exibe os dados do json
 fetchData();

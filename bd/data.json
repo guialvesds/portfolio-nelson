@@ -1,0 +1,20 @@
+
+
+{
+    "dataProjects":[
+        {
+            "title": "Teste de titulo 1",
+            "subscription": "Aqui temos a descrição do que foi feito. e o que será escrito nos dados informado pelo html. Na imagem abaixo temos o exemplo de busca de dados da API do spotfy.",
+            "img": "./assets/projeto1.jpg",
+            "linkGithub": "https://img.shields.io/badge/GitHub-Ver_no_GitHub-blue?logo=GitHub",
+            "linkRepository": "https://github.com/nelsoneltz/spotify-api"
+        },
+        {
+            "title": "Teste de titulo 2",
+            "subscription": "Aqui temos a descrição do que foi feito. e o que será escrito nos dados informado pelo html.",
+            "img": "",
+            "linkGithub": "https://img.shields.io/badge/GitHub-Ver_no_GitHub-blue?logo=GitHub",
+            "linkRepository": ""
+        }
+    ]
+}

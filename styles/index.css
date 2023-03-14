@@ -98,16 +98,14 @@ p>a {
 
 .btn-normal {
     display: none;
-
-    animation: btn-normal ease 0.5s forwards;
 }
+
 
 .btn-scroll {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: var(--color-title);
-    ;
     color: #fff;
     border: none;
     width: 50px;
@@ -139,18 +137,6 @@ p>a {
     }
 }
 
-@keyframes btn-normal {
-    from {
-        bottom: 20px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: -50px;
-        opacity: 0;
-    }
-}
-
 footer {
     margin-top: 4rem;
 }
@@ -171,18 +157,16 @@ screen and (max-width: 960px) {
     section {
         float: none;
         position: static;
-        width: auto
-    }
+        width: auto;
 
-    header {
-        padding-right: 320px
-    }
-
-    section {
         border: 1px solid #e5e5e5;
         border-width: 1px 0;
         padding: 20px 0;
         margin: 0 0 20px
+    }
+
+    header {
+        padding-right: 320px
     }
 
     header a small {
